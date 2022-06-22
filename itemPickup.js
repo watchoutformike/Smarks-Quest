@@ -14,17 +14,18 @@ class ItemPickup extends GameObject {
   
       this.talking = [
         {
-          required: [config.storyFlag],
+          required: [this.storyFlag],
           events: [
             { type: "textMessage", text: "You have already used this." },
           ]
         },
         {
-          events: {
-            { type: "craftingMenu", pizas: this.items },
-            { type: "addStoryFlag", flag: config.storyFlag },
+          events: [
+            { type: "craftingMenu", pizzas: this.items
+   },
+            { type: "addStoryFlag", flag: this.storyFlag },
           ]
         }
       ]
-  }
+    }
   }
