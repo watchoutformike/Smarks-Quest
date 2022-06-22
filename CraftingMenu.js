@@ -3,7 +3,11 @@ class CraftingMenu {
     this.pizzas = pizzas;
     this.onComplete = onComplete;
   }
-
+ update() {
+    this.sprite.currentAnimation = playerState.storyFlags[this.storyFlag]
+     ? "used-down"
+     : "unused-down";
+   }
   getOptions() {
     return this.pizzas.map(id => {
       const base = Pizzas[id];
